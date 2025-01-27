@@ -21,4 +21,5 @@ This project demonstrates API testing using Postman, providing a collection of t
 
 ### Installation
 1.Postman: If you haven't already, [download and install Postman.](https://www.postman.com/downloads/)
+
 2.Clone the repository:
