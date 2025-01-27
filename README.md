@@ -10,3 +10,11 @@ This project demonstrates API testing using Postman, providing a collection of t
 
 ## API Documentation:
 - https://documenter.getpostman.com/view/13082503/2sA2xmUAJ1
+
+### Technology used:
+- Postman
+- Newman
+### Prerequisite:
+- Node Js
+- Newman
+- Newman Html Report Library
