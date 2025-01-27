@@ -37,7 +37,7 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
        npm install -g newman
     + Newman Html Report Install Command:
        npm install -g newman-reporter-htmlextra
-## Usage
+### Usage
 1. Select Environment:
    + In Postman, select the appropriate environment (e.g., Development, Production) from the top-right dropdown.
 2. Run Collection:
@@ -48,4 +48,95 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
 3. View Results:
    + Once the tests are complete, view the results in the Runner tab.
    + Detailed test results can be viewed for each request.
-# Testing
+## Testing
+# Test Case Scenarios:
+# 1. Create New Booking
+## Request URL: https://restful-booker.herokuapp.com/booking/
+## Request Method: POST
+## Pre-request Script:
+
+ var firstName = pm.variables.replaceIn("{{$randomFirstName}}")
+    pm.environment.set("firstName", firstName)
+    console.log("First Name Value "+firstName)
+    
+    var lastName = pm.variables.replaceIn("{{$randomLastName}}")
+    pm.environment.set("lastName", lastName)
+    console.log("Last Name Value "+lastName)
+    
+    var totalPrice = pm.variables.replaceIn("{{$randomInt}}")
+    pm.environment.set("totalPrice", totalPrice)
+    console.log(totalPrice)
+    
+    var depositPaid = pm.variables.replaceIn("{{$randomBoolean}}")
+    pm.environment.set("depositPaid", depositPaid)
+    console.log(depositPaid)
+    
+    //Date
+    const moment = require('moment')
+    const today = moment()
+    pm.environment.set("checkin", today.add(1,'d').format("YYYY-MM-DD"))
+    pm.environment.set("checkout",today.add(5,'d').format("YYYY-MM-DD") )
+    
+    var additionalNeeds = pm.variables.replaceIn("{{$randomNoun}}")
+    pm.environment.set("additionalNeeds", additionalNeeds)
+
+## Request Body:
+ {
+     "firstname" : "{{firstName}}",
+     "lastname" : "{{lastName}}",
+     "totalprice" : {{totalPrice}},
+     "depositpaid" : {{depositPaid}},
+     "bookingdates" : {
+   	  "checkin" : "{{checkin}}",
+   	  "checkout" : "{{checkout}}"
+     },
+     "additionalneeds" : "{{additionalNeeds}}"
+ }
+ 
+## Response Body:
+ {
+     "bookingid": 4334,
+     "booking": {
+         "firstname": "Joelle",
+         "lastname": "Krajcik",
+         "totalprice": 266,
+         "depositpaid": true,
+         "bookingdates": {
+             "checkin": "2024-03-15",
+             "checkout": "2024-03-20"
+         },
+         "additionalneeds": "monitor"
+     }
+ }
+
+ #2. Get Booking Details By ID
+ ## Request URL: https://restful-booker.herokuapp.com/booking/bookingid
+ ## Request Method: GET
+ ## Response Body:
+ 
+ {
+   "firstname": "D'angelo",
+   "lastname": "Feeney",
+   "totalprice": 757,
+   "depositpaid": true,
+   "bookingdates": {
+       "checkin": "2024-03-15",
+       "checkout": "2024-03-20"
+   },
+   "additionalneeds": "hard drive"
+}
+
+# 3. Create A Token For Authentication.
+## Request URL: https://restful-booker.herokuapp.com/auth
+## Request Method: POST
+## Pre-request Script: None
+## Request Body:
+{
+   "username": "admin",
+   "password": "password123"
+}
+## Response Body:
+{
+   "token": "06eb798bf6f2caa"
+}
+
