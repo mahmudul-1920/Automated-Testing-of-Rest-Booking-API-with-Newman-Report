@@ -48,3 +48,4 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
 3. View Results:
    + Once the tests are complete, view the results in the Runner tab.
    + Detailed test results can be viewed for each request.
+# Testing
