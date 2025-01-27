@@ -4,6 +4,6 @@ This project demonstrates API testing using Postman, providing a collection of t
 ### Features
 - Tests for GET, POST, PUT, DELETE requests
 - Collection of tests covering different API endpoints
-Environment setup for easy switching between environments
-Pre-request scripts for data setup
-Test scripts for assertions and validations
+- Environment setup for easy switching between environments
+- Pre-request scripts for data setup
+- Test scripts for assertions and validations
