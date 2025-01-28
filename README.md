@@ -220,4 +220,4 @@ This project demonstrates API testing using Postman, providing a collection of t
       newman run My_Project.postman_collection.json -e MyProject.postman_environment.json -r cli,htmlextra
 ### Newman Report Summary:
 
-![image alt] (https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/blob/4c96478c32c5ecc63d735c92e3524ba98900ac7b/report%20screenshort.png)
+![Newman report summary](https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/blob/4c96478c32c5ecc63d735c92e3524ba98900ac7b/report%20screenshort.png)
