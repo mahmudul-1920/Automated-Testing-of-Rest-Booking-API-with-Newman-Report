@@ -34,9 +34,11 @@ This project demonstrates API testing using Postman, providing a collection of t
     + Select Import and choose the file.
 5. Newman and Report Installation Process:
     + Newman Install Command:
-       npm install -g newman
+      
+          npm install -g newman
     + Newman Html Report Install Command:
-       npm install -g newman-reporter-htmlextra
+      
+          npm install -g newman-reporter-htmlextra
 ### Usage
 1. Select Environment:
    + In Postman, select the appropriate environment (e.g., Development, Production) from the top-right dropdown.
