@@ -49,7 +49,7 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
    + Once the tests are complete, view the results in the Runner tab.
    + Detailed test results can be viewed for each request.
 ## Testing
-# Test Case Scenarios:
+## Test Case Scenarios:
 # 1. Create New Booking
 ## Request URL: https://restful-booker.herokuapp.com/booking/
 ## Request Method: POST
