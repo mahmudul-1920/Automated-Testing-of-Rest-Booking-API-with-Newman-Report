@@ -222,4 +222,4 @@ This project demonstrates API testing using Postman, providing a collection of t
 
 ![Newman report summary](https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/blob/4c96478c32c5ecc63d735c92e3524ba98900ac7b/report%20screenshort.png)
 ![Newman report summary](https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/blob/64bba19a56878377273d50fdb45485cffe2d5b65/newman%20report%20summary.png)
-![Newman report summary](
+![Newman report summary](https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/blob/baa5efd8fb0df9cfb9b75a060781b2de352d2066/Screenshot_21.png)
