@@ -210,3 +210,11 @@ This project demonstrates API testing using Postman, providing a collection of t
 ### Request Method: DELETE
 ### Response Body: None
 ### Run Command:
+
++ Run Command for Console:
+  
+      newman run My_Project.postman_collection.json -e MyProject.postman_environment.json
+
++ Run Command for Report:
+
+      newman run My_Project.postman_collection.json -e MyProject.postman_environment.json -r cli,htmlextra
