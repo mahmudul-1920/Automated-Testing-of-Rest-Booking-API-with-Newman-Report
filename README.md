@@ -55,7 +55,7 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
 ## Request Method: POST
 ## Pre-request Script:
 
- var firstName = pm.variables.replaceIn("{{$randomFirstName}}")
+     var firstName = pm.variables.replaceIn("{{$randomFirstName}}")
     pm.environment.set("firstName", firstName)
     console.log("First Name Value "+firstName)
     
@@ -81,7 +81,7 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
     pm.environment.set("additionalNeeds", additionalNeeds)
 
 ## Request Body:
- {
+  
      "firstname" : "{{firstName}}",
      "lastname" : "{{lastName}}",
      "totalprice" : {{totalPrice}},
@@ -91,10 +91,10 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
    	  "checkout" : "{{checkout}}"
      },
      "additionalneeds" : "{{additionalNeeds}}"
- }
+ 
  
 ## Response Body:
- {
+ 
      "bookingid": 4334,
      "booking": {
          "firstname": "Joelle",
@@ -107,34 +107,36 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
          },
          "additionalneeds": "monitor"
      }
- }
+ 
 
  #2. Get Booking Details By ID
  ## Request URL: https://restful-booker.herokuapp.com/booking/bookingid
  ## Request Method: GET
  ## Response Body:
+  
+     "bookingid": 4334,
+     "booking": {
+         "firstname": "Joelle",
+         "lastname": "Krajcik",
+         "totalprice": 266,
+         "depositpaid": true,
+         "bookingdates": {
+             "checkin": "2024-03-15",
+             "checkout": "2024-03-20"
+         },
+         "additionalneeds": "monitor"
+     }
  
- {
-   "firstname": "D'angelo",
-   "lastname": "Feeney",
-   "totalprice": 757,
-   "depositpaid": true,
-   "bookingdates": {
-       "checkin": "2024-03-15",
-       "checkout": "2024-03-20"
-   },
-   "additionalneeds": "hard drive"
-}
-
+   
 # 3. Create A Token For Authentication.
-## Request URL: https://restful-booker.herokuapp.com/auth
+## Request URL:  https://restful-booker.herokuapp.com/auth
 ## Request Method: POST
 ## Pre-request Script: None
 ## Request Body:
-{
+
    "username": "admin",
    "password": "password123"
-}
+
 ## Response Body:
 {
    "token": "06eb798bf6f2caa"
