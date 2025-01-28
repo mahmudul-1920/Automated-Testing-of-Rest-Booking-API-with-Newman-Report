@@ -23,7 +23,9 @@ This project demonstrates API testing using Postman, providing a collection of t
 1. Postman: If you haven't already, [download and install Postman.](https://www.postman.com/downloads/)
 2. Clone the repository:
    
-git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API-with-Newman-Report.git
+git clone https:
+             
+             //github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API-with-Newman-Report.git
 
 3. Import the Postman collection:
     + pen Postman.
@@ -79,9 +81,10 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
     
     var additionalNeeds = pm.variables.replaceIn("{{$randomNoun}}")
     pm.environment.set("additionalNeeds", additionalNeeds)
+    
 
 ## Request Body:
-  
+    {
      "firstname" : "{{firstName}}",
      "lastname" : "{{lastName}}",
      "totalprice" : {{totalPrice}},
@@ -91,10 +94,10 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
    	  "checkout" : "{{checkout}}"
      },
      "additionalneeds" : "{{additionalNeeds}}"
- 
+    }
  
 ## Response Body:
- 
+    {
      "bookingid": 4334,
      "booking": {
          "firstname": "Joelle",
@@ -107,13 +110,14 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
          },
          "additionalneeds": "monitor"
      }
+     }
  
 
  #2. Get Booking Details By ID
  ## Request URL: https://restful-booker.herokuapp.com/booking/bookingid
  ## Request Method: GET
  ## Response Body:
-  
+    {
      "bookingid": 4334,
      "booking": {
          "firstname": "Joelle",
@@ -133,12 +137,76 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
 ## Request Method: POST
 ## Pre-request Script: None
 ## Request Body:
-{
-   "username": "admin",
-   "password": "password123"
-}
-## Response Body:
-{
-   "token": "06eb798bf6f2caa"
-}
+     {
+    "username": "admin", 
+    "password": "password123"
+     }
 
+## Response Body:
+    {
+    "token": "06eb798bf6f2caa"
+    }
+
+# 4. Update the Booking Details
+## Request URL: ttps://restful-booker.herokuapp.com/booking/bookingid
+## Request Method: PUT
+## Pre-request Script:
+
+    var firstName = pm.variables.replaceIn("{{$randomFirstName}}")
+    pm.environment.set("firstName", firstName)
+    console.log("First Name Value "+firstName)
+    
+    var lastName = pm.variables.replaceIn("{{$randomLastName}}")
+    pm.environment.set("lastName", lastName)
+    console.log("Last Name Value "+lastName)
+    
+    var totalPrice = pm.variables.replaceIn("{{$randomInt}}")
+    pm.environment.set("totalPrice", totalPrice)
+    console.log(totalPrice)
+    
+    var depositPaid = pm.variables.replaceIn("{{$randomBoolean}}")
+    pm.environment.set("depositPaid", depositPaid)
+    console.log(depositPaid)
+    
+    //Date
+    const moment = require('moment')
+    const today = moment()
+    pm.environment.set("checkin", today.add(1,'d').format("YYYY-MM-DD"))
+    pm.environment.set("checkout",today.add(5,'d').format("YYYY-MM-DD") )
+    
+    var additionalNeeds = pm.variables.replaceIn("{{$randomNoun}}")
+    pm.environment.set("additionalNeeds", additionalNeeds)
+
+  ## Request Body:
+    {
+     "firstname" : "{{firstName}}",
+     "lastname" : "{{lastName}}",
+     "totalprice" : {{totalPrice}},
+     "depositpaid" : {{depositPaid}},
+     "bookingdates" : {
+   	  "checkin" : "{{checkin}}",
+   	  "checkout" : "{{checkout}}"
+     },
+     "additionalneeds" : "{{additionalNeeds}}"
+    }
+
+## Response Body:
+    {
+     "bookingid": 4334,
+     "booking": {
+         "firstname": "Joelle",
+         "lastname": "Krajcik",
+         "totalprice": 266,
+         "depositpaid": true,
+         "bookingdates": {
+             "checkin": "2024-03-15",
+             "checkout": "2024-03-20"
+         },
+         "additionalneeds": "monitor"
+     }
+    }
+# 5. Delete Booking Record
+## Request URL: https://restful-booker.herokuapp.com/booking/bookingid
+## Request Method: DELETE
+## Response Body: None
+## Run Command:
