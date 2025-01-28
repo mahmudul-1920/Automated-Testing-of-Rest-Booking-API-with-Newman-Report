@@ -50,12 +50,12 @@ This project demonstrates API testing using Postman, providing a collection of t
 3. View Results:
    + Once the tests are complete, view the results in the Runner tab.
    + Detailed test results can be viewed for each request.
-## Testing
-## Test Case Scenarios:
-# 1. Create New Booking
-## Request URL: https://restful-booker.herokuapp.com/booking/
-## Request Method: POST
-## Pre-request Script:
+### Testing
+### Test Case Scenarios:
+## 1. Create New Booking
+### Request URL: https://restful-booker.herokuapp.com/booking/
+### Request Method: POST
+### Pre-request Script:
 
      var firstName = pm.variables.replaceIn("{{$randomFirstName}}")
     pm.environment.set("firstName", firstName)
@@ -83,7 +83,7 @@ This project demonstrates API testing using Postman, providing a collection of t
     pm.environment.set("additionalNeeds", additionalNeeds)
     
 
-## Request Body:
+### Request Body:
     {
      "firstname" : "{{firstName}}",
      "lastname" : "{{lastName}}",
@@ -96,7 +96,7 @@ This project demonstrates API testing using Postman, providing a collection of t
      "additionalneeds" : "{{additionalNeeds}}"
     }
  
-## Response Body:
+### Response Body:
     {
      "bookingid": 4334,
      "booking": {
@@ -113,10 +113,10 @@ This project demonstrates API testing using Postman, providing a collection of t
      }
  
 
- #2. Get Booking Details By ID
- ## Request URL: https://restful-booker.herokuapp.com/booking/bookingid
- ## Request Method: GET
- ## Response Body:
+ ## 2. Get Booking Details By ID
+ ### Request URL: https://restful-booker.herokuapp.com/booking/bookingid
+ ### Request Method: GET
+ ### Response Body:
     {
      "bookingid": 4334,
      "booking": {
@@ -132,25 +132,25 @@ This project demonstrates API testing using Postman, providing a collection of t
      }
  
    
-# 3. Create A Token For Authentication.
-## Request URL:  https://restful-booker.herokuapp.com/auth
-## Request Method: POST
-## Pre-request Script: None
-## Request Body:
+## 3. Create A Token For Authentication.
+### Request URL:  https://restful-booker.herokuapp.com/auth
+### Request Method: POST
+### Pre-request Script: None
+### Request Body:
      {
     "username": "admin", 
     "password": "password123"
      }
 
-## Response Body:
+### Response Body:
     {
     "token": "06eb798bf6f2caa"
     }
 
-# 4. Update the Booking Details
-## Request URL: ttps://restful-booker.herokuapp.com/booking/bookingid
-## Request Method: PUT
-## Pre-request Script:
+## 4. Update the Booking Details
+### Request URL: ttps://restful-booker.herokuapp.com/booking/bookingid
+### Request Method: PUT
+### Pre-request Script:
 
     var firstName = pm.variables.replaceIn("{{$randomFirstName}}")
     pm.environment.set("firstName", firstName)
@@ -177,7 +177,7 @@ This project demonstrates API testing using Postman, providing a collection of t
     var additionalNeeds = pm.variables.replaceIn("{{$randomNoun}}")
     pm.environment.set("additionalNeeds", additionalNeeds)
 
-  ## Request Body:
+  ### Request Body:
     {
      "firstname" : "{{firstName}}",
      "lastname" : "{{lastName}}",
@@ -190,7 +190,7 @@ This project demonstrates API testing using Postman, providing a collection of t
      "additionalneeds" : "{{additionalNeeds}}"
     }
 
-## Response Body:
+### Response Body:
     {
      "bookingid": 4334,
      "booking": {
@@ -205,8 +205,8 @@ This project demonstrates API testing using Postman, providing a collection of t
          "additionalneeds": "monitor"
      }
     }
-# 5. Delete Booking Record
-## Request URL: https://restful-booker.herokuapp.com/booking/bookingid
-## Request Method: DELETE
-## Response Body: None
-## Run Command:
+## 5. Delete Booking Record
+### Request URL: https://restful-booker.herokuapp.com/booking/bookingid
+### Request Method: DELETE
+### Response Body: None
+### Run Command:
