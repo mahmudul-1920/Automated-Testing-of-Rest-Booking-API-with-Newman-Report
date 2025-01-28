@@ -133,10 +133,10 @@ git clone https://github.com/mahmudul-1920/Automated-Testing-of-Rest-Booking-API
 ## Request Method: POST
 ## Pre-request Script: None
 ## Request Body:
-
+{
    "username": "admin",
    "password": "password123"
-
+}
 ## Response Body:
 {
    "token": "06eb798bf6f2caa"
