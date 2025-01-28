@@ -218,3 +218,5 @@ This project demonstrates API testing using Postman, providing a collection of t
 + Run Command for Report:
 
       newman run My_Project.postman_collection.json -e MyProject.postman_environment.json -r cli,htmlextra
+### Newman Report Summary:
+
